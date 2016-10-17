@@ -2,7 +2,7 @@
 version: "2"
 services:
   db:
-    image: openmrs-platform-mysql
+    image: teleivo/openmrs-platform-mysql
     ports:
       - "3306:3306"
     container_name: &db openmrs-platform-mysql
@@ -12,10 +12,10 @@ services:
       MYSQL_PASSWORD: &openmrs_db_password openmrs
       MYSQL_DATABASE: &openmrs_db openmrs
   openmrs:
-    image: openmrs-platform
+    image: openmrs-platform-1.11.4
     ports:
       - "8080:8080"
-    container_name: openmrs-platform
+    container_name: openmrs-platform-1.11.4
     depends_on:
       - db
     environment:
