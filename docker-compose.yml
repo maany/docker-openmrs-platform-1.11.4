@@ -2,7 +2,7 @@
 version: "2"
 services:
   db:
-    image: teleivo/openmrs-platform-mysql
+    image: openmrs-platform-mysql:1.11.4
     ports:
       - "3306:3306"
     container_name: &db openmrs-platform-mysql
