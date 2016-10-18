@@ -12,10 +12,10 @@ services:
       MYSQL_PASSWORD: &openmrs_db_password openmrs
       MYSQL_DATABASE: &openmrs_db openmrs
   openmrs:
-    image: openmrs-platform-1.11.4
+    image: openmrs-platform:1.11.4
     ports:
       - "8080:8080"
-    container_name: openmrs-platform-1.11.4
+    container_name: openmrs-platform
     depends_on:
       - db
     environment:
