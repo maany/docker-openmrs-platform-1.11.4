@@ -27,10 +27,15 @@ function copyJaxenTest {
 	docker exec -it $CONTAINER touch $OPENMRS_CONTEXT
 }
 
-
-if [ "$1" == "--fix-jaxen" ]; then
+if [ "$1" == "--fix-jaxen-and-log" ]; then
+	echo $(copyJaxenTest)
+	x-terminal-emulator -e docker logs --follow $(nameOfLastContainer) &
+elif [ "$1" == "--logs" ]; then
+	x-terminal-emulator -e docker logs --follow $(nameOfLastContainer) &
+elif ["$1" == "--fix-jaxen"]; then
 	echo $(copyJaxenTest)
 else
-		build
-		run
+echo $1
+		#build
+		#run
 fi
