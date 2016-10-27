@@ -8,12 +8,11 @@ ENV OPENMRS_PLATFORM_URL="http://sourceforge.net/projects/openmrs/files/releases
 ENV DOCKERIZE_VERSION v0.2.0
 ENV DEFAULT_OPENMRS_DB_USER="openmrs"
 ENV DEFAULT_OPENMRS_DB_PASS="openmrs"
-
+ENV TOMCAT_CLASSPATH /usr/local/tomcat/lib/
 # Download OpenMRS
 RUN curl -L ${OPENMRS_PLATFORM_URL} \
          -o ${CATALINA_HOME}/webapps/openmrs.war \
     && mkdir -p ${OPENMRS_MODULES}
-
 
 # Install dockerize
 RUN curl -L "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz" -o "/tmp/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz" \
@@ -21,5 +20,7 @@ RUN curl -L "https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_
 # Copy templates
 ADD openmrs-runtime.properties.tmpl "${CATALINA_HOME}/openmrs-runtime.properties.tmpl"
 ADD setenv.sh.tmpl "${CATALINA_HOME}/bin/setenv.sh.tmpl"
+#Copy jaxen jar file
+COPY jaxen-1.1.6.jar "${TOMCAT_CLASSPATH}"
 
-CMD ["dockerize","-template","/usr/local/tomcat/bin/setenv.sh.tmpl:/usr/local/tomcat/bin/setenv.sh","-template","/usr/local/tomcat/openmrs-runtime.properties.tmpl:/usr/local/tomcat/openmrs-runtime.properties","-wait","tcp://db:3306","-timeout","1m15s","catalina.sh","run"]
+CMD ["dockerize","-template","/usr/local/tomcat/bin/setenv.sh.tmpl:/usr/local/tomcat/bin/setenv.sh","-template","/usr/local/tomcat/openmrs-runtime.properties.tmpl:/usr/local/tomcat/openmrs-runtime.properties","-wait","tcp://db:3306","-timeout","2m15s","catalina.sh","run"]

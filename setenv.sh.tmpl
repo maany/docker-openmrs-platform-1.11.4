@@ -1,1 +1,1 @@
-export JAVA_OPTS="{{ default .Env.JAVA_OPTS "-Dfile.encoding=UTF-8 -server -Xms256m -Xmx768m" }}"
+export JAVA_OPTS="{{ default .Env.JAVA_OPTS "-Dfile.encoding=UTF-8 -server Xmx512m -Xms512m -XX:PermSize=512m -XX:MaxPermSize=1024m -XX:NewSize=128m" }}"
