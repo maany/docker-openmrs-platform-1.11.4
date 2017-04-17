@@ -1403,7 +1403,7 @@ CREATE TABLE `encounter_type` (
 
 LOCK TABLES `encounter_type` WRITE;
 /*!40000 ALTER TABLE `encounter_type` DISABLE KEYS */;
-INSERT INTO `encounter_type` VALUES (1,'ADULTINITIAL','Outpatient Adult Initial Visit',1,'2005-02-24 00:00:00',0,NULL,NULL,NULL,'8d5b27bc-c2cc-11de-8d13-0010c6dffd0f',NULL,NULL),(2,'ADULTRETURN','Outpatient Adult Return Visit',1,'2005-02-24 00:00:00',0,NULL,NULL,NULL,'8d5b2be0-c2cc-11de-8d13-0010c6dffd0f',NULL,NULL),(3,'PEDSINITIAL','Outpatient Pediatric Initial Visit',1,'2005-02-24 00:00:00',0,NULL,NULL,NULL,'8d5b2dde-c2cc-11de-8d13-0010c6dffd0f',NULL,NULL),(4,'PEDSRETURN','Outpatient Pediatric Return Visit',1,'2005-02-24 00:00:00',0,NULL,NULL,NULL,'8d5b3108-c2cc-11de-8d13-0010c6dffd0f',NULL,NULL),(6,'MRRTTemplateHandler','Encounter represents a Radiology event. All relevant data is in form of IDE MRRT Templates',1,'2016-06-07 19:29:51',0,NULL,NULL,NULL,'b463e8bf-b967-4f1e-a22c-7064a4a0af5b',NULL,NULL);
+INSERT INTO `encounter_type` VALUES (1,'ADULTINITIAL','Outpatient Adult Initial Visit',1,'2005-02-24 00:00:00',0,NULL,NULL,NULL,'8d5b27bc-c2cc-11de-8d13-0010c6dffd0f',NULL,NULL),(2,'ADULTRETURN','Outpatient Adult Return Visit',1,'2005-02-24 00:00:00',0,NULL,NULL,NULL,'8d5b2be0-c2cc-11de-8d13-0010c6dffd0f',NULL,NULL),(3,'PEDSINITIAL','Outpatient Pediatric Initial Visit',1,'2005-02-24 00:00:00',0,NULL,NULL,NULL,'8d5b2dde-c2cc-11de-8d13-0010c6dffd0f',NULL,NULL),(4,'PEDSRETURN','Outpatient Pediatric Return Visit',1,'2005-02-24 00:00:00',0,NULL,NULL,NULL,'8d5b3108-c2cc-11de-8d13-0010c6dffd0f',NULL,NULL),(6,'RAD-MRRT','Encounter represents a Radiology event. All relevant data is in form of IHE MRRT Templates',1,'2016-06-07 19:29:51',0,NULL,NULL,NULL,'b463e8bf-b967-4f1e-a22c-7064a4a0af5b',NULL,NULL);
 /*!40000 ALTER TABLE `encounter_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4031,4 +4031,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-17 18:50:18
+-- Dump completed on 2016-10-31 11:45:33
